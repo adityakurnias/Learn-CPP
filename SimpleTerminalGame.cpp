@@ -3,6 +3,7 @@
 
 int main()
 {
+    // Set up the field by using Multidimensional Array
     int koordinat[5][5] = {
         {0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0},
@@ -10,6 +11,7 @@ int main()
         {0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0}};
 
+    // Place the enemy in a random location
     int row, col;
     int lives = 3;
     srand(time(0));
@@ -19,14 +21,16 @@ int main()
     std::cout << "Welcome to the game!" << std::endl;
     std::cout << "You have " << lives << " lives." << std::endl;
 
+    // Game loop
     while (lives >= 0)
     {
-        std::cout << "Tebak lokasi musuh!" << std::endl;
-        std::cout << "Masukkan koordinat row (0-4): ";
+        std::cout << "Guess enemy location!" << std::endl;
+        std::cout << "Row Coordinate (0-4): ";
         std::cin >> row;
-        std::cout << "Masukkan koordinat col (0-4): ";
+        std::cout << "Column Coordinate (0-4): ";
         std::cin >> col;
 
+        // Update the field based on the user's guess
         if (koordinat[row][col] == true)
         {
             koordinat[row][col] = 3;
@@ -36,11 +40,12 @@ int main()
         else if (koordinat[row][col] == false)
         {
             koordinat[row][col] = 2;
-            std::cout << "You missed the enemy!" << std::endl;
+            std::cout << "You missed the enemy!" << lives << "again to try."  << std::endl;
             lives--;
         }
     }
 
+    // Print the field if the game is over
     for (int i = 0; i < 5; i++)
     {
         for (int j = 0; j < 5; j++)
@@ -49,6 +54,6 @@ int main()
         }
         std::cout << std::endl;
     }
-    std::cout << "2 adalah lokasi yang kamu tebak, 1 adalah lokasi musuh dan 3 adalah lokasi musuh yang sudah ketebak" << std::endl;
+    std::cout << "2 is the location you guessed, 1 is the enemy location and 3 is the enemy location that has been guessed" << std::endl;
     return 0;
 }
