@@ -8,8 +8,7 @@ int main()
         {0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0}
-    };
+        {0, 0, 0, 0, 0}};
 
     int row, col;
     int lives = 3;
@@ -33,7 +32,8 @@ int main()
             koordinat[row][col] = 3;
             std::cout << "You hit the enemy!" << std::endl;
             lives -= lives;
-        } else if (koordinat[row][col] == false)
+        }
+        else if (koordinat[row][col] == false)
         {
             koordinat[row][col] = 2;
             std::cout << "You missed the enemy!" << std::endl;
