@@ -22,7 +22,7 @@ int main()
     std::cout << "You have " << lives << " lives." << std::endl;
 
     // Game loop
-    while (lives >= 0)
+    while (lives != 0)
     {
         std::cout << "Guess enemy location!" << std::endl;
         std::cout << "Row Coordinate (0-4): ";
@@ -40,7 +40,7 @@ int main()
         else if (koordinat[row][col] == false)
         {
             koordinat[row][col] = 2;
-            std::cout << "You missed the enemy!" << lives << "again to try."  << std::endl;
+            std::cout << "You missed the enemy! \n";
             lives--;
         }
     }
